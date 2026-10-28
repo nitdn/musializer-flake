@@ -14,7 +14,7 @@
         inputsFrom = [ self.packages.${system}.default ];
         shellHook = ''
           export NIX_CFLAGS_COMPILE="$(pkg-config --libs \
-          glx) $NIX_CFLAGS_COMPILE"
+          glx) -DMUSIALIZER_HOTRELOAD $NIX_CFLAGS_COMPILE"
         '';
         packages = with pkgs; [
           zenity
